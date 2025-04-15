@@ -6,10 +6,6 @@ name: Node.js CI
 env:
   RIPPLED_DOCKER_IMAGE: rippleci/rippled:develop
 
-permissions:
-  id-token: write  # Needed for OIDC authentication
-  pages: write
-
 on:
   push:
     branches: [main, 1.x]
@@ -247,6 +243,9 @@ jobs:
           retention-days: 10
 
   deploy-docs-pages:
+    permissions:
+      id-token: write  # Needed for OIDC authentication
+      pages: write
     environment:
       name: github-pages
       url: ${{ steps.docs-artifact.outputs.page_url }}
