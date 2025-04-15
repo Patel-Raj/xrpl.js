@@ -6,6 +6,9 @@ name: Node.js CI
 env:
   RIPPLED_DOCKER_IMAGE: rippleci/rippled:develop
 
+permissions:
+  id-token: write  # Needed for OIDC authentication
+
 on:
   push:
     branches: [main, 1.x]
