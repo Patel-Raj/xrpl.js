@@ -8,6 +8,7 @@ env:
 
 permissions:
   id-token: write  # Needed for OIDC authentication
+  pages: write
 
 on:
   push:
